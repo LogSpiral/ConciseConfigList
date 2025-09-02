@@ -1,0 +1,27 @@
+﻿Configs: {
+	ConciseConfig: {
+		DisplayName: 简化设置
+
+		ShowDespiteNoConfig: {
+			Label: 显示没有配置项的模组
+			Tooltip: ""
+		}
+
+		UseConciseConfigList: {
+			Label: 启用简洁配置列表
+			Tooltip: ""
+		}
+
+		ModListMode: {
+			Label: 配置界面模组列表样式
+			Tooltip: ""
+		}
+	}
+
+	ModListMode: {
+		Tooltip: ""
+		Vanilla.Label: 原版
+		Icon.Label: 大图标
+		SmallIcon.Label: 小图标
+	}
+}

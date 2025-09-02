@@ -1,0 +1,27 @@
+﻿Configs: {
+	ConciseConfig: {
+		DisplayName: Concise Config
+
+		ShowDespiteNoConfig: {
+			Label: Show Despite No Config
+			Tooltip: ""
+		}
+
+		UseConciseConfigList: {
+			Label: Use Concise Config List
+			Tooltip: ""
+		}
+
+		ModListMode: {
+			Label: Mod List Style
+			Tooltip: ""
+		}
+	}
+
+	ModListMode: {
+		Tooltip: ""
+		Vanilla.Label: Vanilla
+		Icon.Label: Icon
+		SmallIcon.Label: Small Icon
+	}
+}
