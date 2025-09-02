@@ -1,5 +1,6 @@
 displayName = Concise Config List简洁模组配置列表
 author = 被简化掉了 Concised
-version = 0.1
+version = 0.1.1
 sortAfter = ImproveGame
 side = client
+homepage = https://github.com/LogSpiral/ConciseConfigList

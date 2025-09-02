@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Terraria;
-using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -16,7 +15,7 @@ using Terraria.UI;
 
 namespace ConciseConfigList;
 
-internal static class UIListExtension
+file static class UIListExtension
 {
     extension(UIElement element)
     {
@@ -64,7 +63,6 @@ public class UIImageHover(Asset<Texture2D> texture) : UIImage(texture)
     }
 }
 
-// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
 public class ConciseConfigList : Mod
 {
     public override void Load()
@@ -73,19 +71,7 @@ public class ConciseConfigList : Mod
             MonoModHooks.Add(populateMod, PopulateModModify);
         if (typeof(UIModConfigList).GetMethod(nameof(UIModConfigList.PopulateConfigs), BindingFlags.NonPublic | BindingFlags.Instance) is { } populateConfig)
             MonoModHooks.Add(populateConfig, PopulateConfigModify);
-
-        On_UIElement.Draw += On_UIElement_Draw;
         base.Load();
-    }
-
-    private void On_UIElement_Draw(On_UIElement.orig_Draw orig, UIElement self, SpriteBatch spriteBatch)
-    {
-        orig.Invoke(self, spriteBatch);
-        return;
-        var dimension = self.GetDimensions();
-
-        spriteBatch.Draw(TextureAssets.MagicPixel.Value, dimension.Position(), new Rectangle(0, 0, 1, 1), Color.White, 0, default, new Vector2(dimension.Width, 1), 0, 0);
-        spriteBatch.Draw(TextureAssets.MagicPixel.Value, dimension.Position(), new Rectangle(0, 0, 1, 1), Color.White, 0, default, new Vector2(1, dimension.Height), 0, 0);
     }
 
     private static Asset<Texture2D> GetIcon(Mod mod)
